@@ -74,43 +74,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Center(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 32,
-                    vertical: 16,
-                  ),
-                  decoration: BoxDecoration(
-                    backgroundBlendMode: BlendMode.lighten,
-                    gradient: const LinearGradient(
-                      colors: [
-                        Colors.white12,
-                        Colors.white10,
-                        Colors.white10,
-                        Colors.white12,
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                    boxShadow: const [
-                      BoxShadow(
-                        blurRadius: 8,
-                        spreadRadius: 2,
-                        color: Colors.black12,
-                        offset: Offset(4, 8),
-                      )
-                    ],
-                    border: Border.all(
-                      color: Colors.white24,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Text(
-                    'Hello There',
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: computeTextColor(),
-                        ),
-                  ),
+                child: Text(
+                  'Hello There',
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        color: computeTextColor(),
+                      ),
                 ),
               ),
             ],
