@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,7 +35,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        setState(() {
+          backgroundColor = Color(
+            (Random().nextDouble() * 0xFFFFFF).toInt(),
+          ).withOpacity(1.0);
+        });
+      },
       child: Scaffold(
         backgroundColor:
             backgroundColor ?? Theme.of(context).colorScheme.surface,
