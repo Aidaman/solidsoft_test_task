@@ -42,6 +42,38 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void randomiseBackgroundColor() {
+    /*
+      There were some methods to generate a random colour, such as:
+    
+        backgroundColor = Color.fromRGBO(
+          Random().nextInt(255),
+          Random().nextInt(255),
+          Random().nextInt(255),
+          1,
+        );
+
+      this method is simple and intuitive, the most readable of three
+      
+      ---
+      
+      Also I could generate random string. I could do it by declaring:
+        static const letters = '01234567890ABCDEF';
+
+      and then making up a string like this:
+        final randomString = List.generate(
+          6,
+          (index) => letters[Random().nextInt(letters.length)],
+        ).join();
+        Color color = Color(int.parse('0xFF$randomString'));
+
+      but this method is complex, and, not to mention, it consumes a lot of memory
+      
+      ---
+
+      short googling got me accustomed with the method I ended up using for this task:
+      It uses a signle random and performs a simple convertion of a random double to hexadecimal
+      making this method more memory-efficient and faster
+     */
     setState(() {
       backgroundColor = Color(
         (Random().nextDouble() * 0xFFFFFF).toInt(),
